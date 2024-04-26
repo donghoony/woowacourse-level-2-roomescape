@@ -1,5 +1,6 @@
 package roomescape.console.controller;
 
+import jakarta.annotation.PostConstruct;
 import java.util.EnumMap;
 import java.util.Map;
 import roomescape.web.view.InputView;
@@ -11,7 +12,15 @@ public abstract class ManagementController {
 
     protected ManagementController() {
         this.commandExecutors = new EnumMap<>(ManagementCommand.class);
-        prepareCommandExecutors();
+    }
+
+    @PostConstruct
+    private void prepareCommandExecutors() {
+        commandExecutors.putAll(Map.of(
+                ManagementCommand.CREATE, this::create,
+                ManagementCommand.DELETE, this::delete,
+                ManagementCommand.BACK, () -> {}
+        ));
     }
 
     public void menu() {
@@ -28,12 +37,4 @@ public abstract class ManagementController {
     public abstract void create();
 
     public abstract void delete();
-
-    private void prepareCommandExecutors() {
-        commandExecutors.putAll(Map.of(
-                ManagementCommand.CREATE, this::create,
-                ManagementCommand.DELETE, this::delete,
-                ManagementCommand.BACK, () -> {}
-        ));
-    }
 }
