@@ -22,15 +22,6 @@ public class ConsoleNavigator {
         this.commandExecutors = new EnumMap<>(AdminCommand.class);
     }
 
-    public void run() {
-        AdminCommand command;
-        do {
-            OutputView.printAdminMenu();
-            command = InputView.getAdminCommand();
-            commandExecutors.get(command).execute();
-        } while (!command.isExit());
-    }
-
     @PostConstruct
     private void prepareCommandExecutors() {
         commandExecutors.putAll(Map.of(
@@ -38,5 +29,14 @@ public class ConsoleNavigator {
                 AdminCommand.TIME_SLOT_MANAGEMENT, timeSlotController::menu,
                 AdminCommand.EXIT, () -> {}
         ));
+    }
+
+    public void run() {
+        AdminCommand command;
+        do {
+            OutputView.printAdminMenu();
+            command = InputView.getAdminCommand();
+            commandExecutors.get(command).execute();
+        } while (!command.isExit());
     }
 }
