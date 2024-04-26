@@ -1,10 +1,8 @@
 package roomescape;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import roomescape.environment.WebConfig;
+import roomescape.web.config.WebConfig;
 
-@SpringBootApplication
 public class RoomescapeWebApplication {
 
     public static void main(String[] args) {

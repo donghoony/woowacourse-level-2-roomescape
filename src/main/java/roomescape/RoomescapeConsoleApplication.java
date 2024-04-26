@@ -2,7 +2,7 @@ package roomescape;
 
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import roomescape.environment.ConsoleConfig;
+import roomescape.console.config.ConsoleConfig;
 
 public class RoomescapeConsoleApplication {
 
