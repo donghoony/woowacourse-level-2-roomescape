@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 import roomescape.core.controller.dto.ReservationRequest;
 import roomescape.core.controller.dto.ReservationResponse;
 import roomescape.core.domain.Reservation;
-import roomescape.core.domain.TimeSlot;
 import roomescape.core.domain.ReservationRepository;
+import roomescape.core.domain.TimeSlot;
 import roomescape.core.domain.TimeSlotRepository;
 
 @Service

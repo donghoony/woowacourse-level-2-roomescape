@@ -23,8 +23,8 @@ class TimeSlotTest {
         TimeSlot timeSlot = new TimeSlot(1L, "15:30");
         // when, then
         assertAll(
-            () -> assertThat(timeSlot.hasTimeOf(LocalTime.of(15, 30))).isTrue(),
-            () -> assertThat(timeSlot.hasTimeOf(LocalTime.of(15, 31))).isFalse()
+                () -> assertThat(timeSlot.hasTimeOf(LocalTime.of(15, 30))).isTrue(),
+                () -> assertThat(timeSlot.hasTimeOf(LocalTime.of(15, 31))).isFalse()
         );
     }
 }

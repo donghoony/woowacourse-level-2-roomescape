@@ -45,7 +45,7 @@ public class OutputView {
         System.out.printf("%10s | %10s | %10s | %10s%n", "ID", "Name", "Date", "Time");
         System.out.println("=".repeat(50));
         for (ReservationResponse response : responses) {
-           printSingleReservation(response);
+            printSingleReservation(response);
         }
     }
 
