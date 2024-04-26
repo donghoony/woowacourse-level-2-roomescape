@@ -33,6 +33,10 @@ public class TimeSlot {
         return new TimeSlot(id, time);
     }
 
+    public boolean hasTimeOf(LocalTime other) {
+        return time.equals(other);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
