@@ -101,6 +101,6 @@ class ReservationServiceTest extends ServiceTest {
     }
 
     private TimeSlot createTimeSlot() {
-        return timeSlotRepository.create(new TimeSlot("12:00"));
+        return timeSlotRepository.addTimeSlot(new TimeSlot("12:00"));
     }
 }

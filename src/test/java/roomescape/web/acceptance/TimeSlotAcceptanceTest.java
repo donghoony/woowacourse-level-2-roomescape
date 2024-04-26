@@ -47,7 +47,7 @@ class TimeSlotAcceptanceTest extends AcceptanceTest {
         List.of(
                 new TimeSlot("13:00"),
                 new TimeSlot("14:00")
-        ).forEach(timeSlotRepository::create);
+        ).forEach(timeSlotRepository::addTimeSlot);
 
         RestAssured.given().log().all()
                 .when().get("/times")
@@ -58,7 +58,7 @@ class TimeSlotAcceptanceTest extends AcceptanceTest {
     @Test
     @DisplayName("id를 사용해 시각을 삭제한다.")
     void deleteByIdTest() {
-        TimeSlot timeSlot = timeSlotRepository.create(new TimeSlot("13:00"));
+        TimeSlot timeSlot = timeSlotRepository.addTimeSlot(new TimeSlot("13:00"));
 
         RestAssured.given().log().all()
                 .when().delete("/times/" + timeSlot.getId())

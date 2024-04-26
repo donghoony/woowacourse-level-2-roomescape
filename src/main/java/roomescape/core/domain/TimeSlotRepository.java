@@ -6,7 +6,7 @@ import java.util.Optional;
 
 public interface TimeSlotRepository {
 
-    TimeSlot create(TimeSlot timeSlot);
+    TimeSlot addTimeSlot(TimeSlot timeSlot);
 
     List<TimeSlot> findAllOrderByTimeAscending();
 

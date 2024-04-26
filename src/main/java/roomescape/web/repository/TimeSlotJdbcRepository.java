@@ -28,7 +28,7 @@ public class TimeSlotJdbcRepository implements TimeSlotRepository {
     }
 
     @Override
-    public TimeSlot create(TimeSlot timeSlot) {
+    public TimeSlot addTimeSlot(TimeSlot timeSlot) {
         Map<String, ? extends Serializable> parameters = Map.of(
                 "start_at", timeSlot.getTime()
         );

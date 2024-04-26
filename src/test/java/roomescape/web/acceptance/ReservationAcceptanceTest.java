@@ -40,7 +40,7 @@ class ReservationAcceptanceTest extends AcceptanceTest {
     @Test
     @DisplayName("예약을 성공적으로 추가한다.")
     void addReservationTest() {
-        TimeSlot timeSlot = timeSlotRepository.create(new TimeSlot("12:00"));
+        TimeSlot timeSlot = timeSlotRepository.addTimeSlot(new TimeSlot("12:00"));
         ReservationRequest request = new ReservationRequest("브라운", "2023-08-05", timeSlot.getId());
 
         RestAssured.given().log().all()
@@ -61,7 +61,7 @@ class ReservationAcceptanceTest extends AcceptanceTest {
     @Test
     @DisplayName("예약을 성공적으로 삭제한다.")
     void deleteReservationTest() {
-        TimeSlot timeSlot = timeSlotRepository.create(new TimeSlot("12:00"));
+        TimeSlot timeSlot = timeSlotRepository.addTimeSlot(new TimeSlot("12:00"));
         Reservation reservation = reservationRepository.addReservation(
                 new Reservation("웨지", "2024-04-27", timeSlot)
         );

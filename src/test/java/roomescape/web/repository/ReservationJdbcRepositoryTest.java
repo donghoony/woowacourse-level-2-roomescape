@@ -40,7 +40,7 @@ class ReservationJdbcRepositoryTest {
     @DisplayName("예약 추가가 DB에 올바르게 반영된다.")
     void addReservationTest() {
         // given
-        TimeSlot timeSlot = timeSlotRepository.create(new TimeSlot("12:00"));
+        TimeSlot timeSlot = timeSlotRepository.addTimeSlot(new TimeSlot("12:00"));
         Reservation reservation = new Reservation("웨지", "2024-04-21", timeSlot);
         // when
         reservationRepository.addReservation(reservation);
@@ -71,7 +71,7 @@ class ReservationJdbcRepositoryTest {
     }
 
     private Long createReservationAndReturnId() {
-        TimeSlot timeSlot = timeSlotRepository.create(new TimeSlot("12:00"));
+        TimeSlot timeSlot = timeSlotRepository.addTimeSlot(new TimeSlot("12:00"));
         return reservationJdbcInsert.executeAndReturnKey(Map.of(
                 "name", "웨지",
                 "date", "2024-04-21",

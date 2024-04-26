@@ -40,7 +40,7 @@ class TimeSlotJdbcRepositoryTest {
         // given
         TimeSlot timeSlot = new TimeSlot("11:00");
         // when
-        timeSlotRepository.create(timeSlot);
+        timeSlotRepository.addTimeSlot(timeSlot);
         // then
         assertThat(databaseRowCount()).isEqualTo(1);
     }

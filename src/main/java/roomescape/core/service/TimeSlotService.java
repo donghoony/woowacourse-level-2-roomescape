@@ -27,7 +27,7 @@ public class TimeSlotService {
     public TimeSlotCreationResponse addTime(TimeSlotCreationRequest request) {
         TimeSlot timeSlot = request.toEntity();
         validateUniqueTime(timeSlot.getTime());
-        TimeSlot savedTimeSlot = timeSlotRepository.create(timeSlot);
+        TimeSlot savedTimeSlot = timeSlotRepository.addTimeSlot(timeSlot);
         return TimeSlotCreationResponse.from(savedTimeSlot);
     }
 

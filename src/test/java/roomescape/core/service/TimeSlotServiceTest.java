@@ -34,7 +34,7 @@ class TimeSlotServiceTest extends ServiceTest {
         // given
         Stream.of("13:00", "15:00", "14:00")
                 .map(TimeSlot::new)
-                .forEach(timeSlotRepository::create);
+                .forEach(timeSlotRepository::addTimeSlot);
         // when
         List<LocalTime> actual = timeSlotService.getAllTimes()
                 .stream()
@@ -63,7 +63,7 @@ class TimeSlotServiceTest extends ServiceTest {
     @DisplayName("이미 시간이 존재하는 경우, 추가할 때 예외가 발생한다.")
     void duplicatedTimeSlotTest() {
         // given
-        timeSlotRepository.create(new TimeSlot("13:00"));
+        timeSlotRepository.addTimeSlot(new TimeSlot("13:00"));
         TimeSlotCreationRequest request = new TimeSlotCreationRequest("13:00");
         // when, then
         assertThatThrownBy(() -> timeSlotService.addTime(request))
@@ -75,7 +75,7 @@ class TimeSlotServiceTest extends ServiceTest {
     @DisplayName("ID로 시간을 삭제한다.")
     void removeTime() {
         // given
-        TimeSlot time = timeSlotRepository.create(new TimeSlot("13:00"));
+        TimeSlot time = timeSlotRepository.addTimeSlot(new TimeSlot("13:00"));
         // when
         timeSlotService.removeTime(time.getId());
         List<TimeSlot> actual = timeSlotRepository.findAllOrderByTimeAscending();
