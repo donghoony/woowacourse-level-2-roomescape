@@ -10,9 +10,9 @@ public interface TimeSlotRepository {
 
     List<TimeSlot> findAllOrderByTimeAscending();
 
-    Optional<TimeSlot> findById(Long id);
+    Optional<TimeSlot> findById(long id);
 
-    void deleteById(Long id);
+    void deleteById(long id);
 
     boolean existsByTime(LocalTime time);
 

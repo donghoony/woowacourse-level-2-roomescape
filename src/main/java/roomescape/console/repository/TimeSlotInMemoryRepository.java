@@ -35,12 +35,12 @@ public class TimeSlotInMemoryRepository implements TimeSlotRepository {
     }
 
     @Override
-    public Optional<TimeSlot> findById(Long id) {
+    public Optional<TimeSlot> findById(long id) {
         return Optional.ofNullable(timeSlots.get(id));
     }
 
     @Override
-    public void deleteById(Long id) {
+    public void deleteById(long id) {
         timeSlots.remove(id);
     }
 

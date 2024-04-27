@@ -33,7 +33,7 @@ public class ReservationInMemoryRepository implements ReservationRepository {
     }
 
     @Override
-    public void deleteById(Long id) {
+    public void deleteById(long id) {
         reservations.remove(id);
     }
 

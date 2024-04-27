@@ -6,7 +6,7 @@ import roomescape.core.domain.Reservation;
 import roomescape.core.domain.ReservationDate;
 import roomescape.core.domain.TimeSlot;
 
-public record ReservationResponse(Long id, String name, LocalDate date, TimeSlotCreationResponse timeSlot) {
+public record ReservationResponse(long id, String name, LocalDate date, TimeSlotCreationResponse timeSlot) {
 
     public static ReservationResponse from(Reservation reservation) {
         Name name = reservation.getName();

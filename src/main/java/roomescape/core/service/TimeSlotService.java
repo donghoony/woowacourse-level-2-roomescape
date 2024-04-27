@@ -37,7 +37,7 @@ public class TimeSlotService {
         }
     }
 
-    public void removeTime(Long id) {
+    public void removeTime(long id) {
         timeSlotRepository.deleteById(id);
     }
 }

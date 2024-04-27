@@ -43,17 +43,17 @@ public class TimeSlotJdbcRepository implements TimeSlotRepository {
     }
 
     @Override
-    public Optional<TimeSlot> findById(Long id) {
+    public Optional<TimeSlot> findById(long id) {
         String sql = "select id, start_at from time_slot where id = ?";
         try {
-            return Optional.ofNullable(jdbcTemplate.queryForObject(sql, TimeSlotRowMapper.getInstance(), id));
+            return Optional.of(jdbcTemplate.queryForObject(sql, TimeSlotRowMapper.getInstance(), id));
         } catch (EmptyResultDataAccessException e) {
             return Optional.empty();
         }
     }
 
     @Override
-    public void deleteById(Long id) {
+    public void deleteById(long id) {
         String sql = "delete from time_slot where id = ?";
         jdbcTemplate.update(sql, id);
     }

@@ -36,7 +36,7 @@ public class TimeSlotController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id) {
+    public ResponseEntity<Void> delete(@PathVariable long id) {
         timeSlotService.removeTime(id);
         return ResponseEntity.noContent().build();
     }
