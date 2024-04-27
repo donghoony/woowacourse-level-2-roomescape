@@ -10,8 +10,7 @@ import roomescape.web.config.WebConfig;
 
 @SpringBootTest(
         classes = {WebConfig.class, TestConfig.class},
-        webEnvironment = WebEnvironment.RANDOM_PORT,
-        properties = "spring.main.allow-bean-definition-overriding=true"
+        webEnvironment = WebEnvironment.RANDOM_PORT
 )
 class AcceptanceTest {
 

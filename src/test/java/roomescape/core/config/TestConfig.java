@@ -12,7 +12,7 @@ public class TestConfig {
 
     @Bean
     @Primary
-    public Clock clock() {
+    public Clock testClock() {
         Instant fixedInstant = Instant.parse("2000-01-01T00:00:00Z");
         return Clock.fixed(fixedInstant, ZoneId.systemDefault());
     }
