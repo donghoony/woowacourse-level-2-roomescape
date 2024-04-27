@@ -9,7 +9,7 @@ import roomescape.console.controller.ConsoleNavigator;
 
 @SpringBootConfiguration
 @EnableAutoConfiguration
-@ComponentScan(basePackages = {"roomescape.console", "roomescape.core"})
+@ComponentScan(basePackages = {"roomescape.core", "roomescape.console"})
 public class ConsoleConfig {
 
     @Bean
