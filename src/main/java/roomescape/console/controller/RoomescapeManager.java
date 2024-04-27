@@ -6,11 +6,11 @@ import java.util.Map;
 import roomescape.web.view.InputView;
 import roomescape.web.view.command.ManagementCommand;
 
-public abstract class ManagementController {
+public abstract class RoomescapeManager {
 
     protected final Map<ManagementCommand, CommandExecutor> commandExecutors;
 
-    protected ManagementController() {
+    protected RoomescapeManager() {
         this.commandExecutors = new EnumMap<>(ManagementCommand.class);
     }
 

@@ -11,12 +11,12 @@ import roomescape.web.view.command.AdminCommand;
 @Component
 public class ConsoleNavigator {
 
-    private final ReservationConsoleController reservationController;
-    private final TimeSlotConsoleController timeSlotController;
+    private final ReservationManager reservationController;
+    private final TimeSlotConsoleManager timeSlotController;
     private final Map<AdminCommand, CommandExecutor> commandExecutors;
 
-    public ConsoleNavigator(ReservationConsoleController reservationController,
-                            TimeSlotConsoleController timeSlotController) {
+    public ConsoleNavigator(ReservationManager reservationController,
+                            TimeSlotConsoleManager timeSlotController) {
         this.reservationController = reservationController;
         this.timeSlotController = timeSlotController;
         this.commandExecutors = new EnumMap<>(AdminCommand.class);

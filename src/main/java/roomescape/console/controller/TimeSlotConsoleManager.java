@@ -1,19 +1,19 @@
 package roomescape.console.controller;
 
 import java.util.List;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Component;
 import roomescape.core.controller.dto.TimeSlotCreationRequest;
 import roomescape.core.controller.dto.TimeSlotCreationResponse;
 import roomescape.core.service.TimeSlotService;
 import roomescape.web.view.InputView;
 import roomescape.web.view.OutputView;
 
-@Controller
-public class TimeSlotConsoleController extends ManagementController {
+@Component
+public class TimeSlotConsoleManager extends RoomescapeManager {
 
     private final TimeSlotService timeSlotService;
 
-    public TimeSlotConsoleController(TimeSlotService timeSlotService) {
+    public TimeSlotConsoleManager(TimeSlotService timeSlotService) {
         super();
         this.timeSlotService = timeSlotService;
     }
