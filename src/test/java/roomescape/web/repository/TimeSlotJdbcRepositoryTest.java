@@ -96,7 +96,6 @@ class TimeSlotJdbcRepositoryTest {
         assertThat(actual).isTrue();
     }
 
-
     @Test
     @DisplayName("ID를 통해 시간을 삭제한다.")
     void deleteByIdTest() {
